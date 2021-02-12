@@ -3,5 +3,5 @@ m <- read.csv(file = 'D:/household_power_consumption.csv', sep = ';', header = T
 m$Date= as.Date(m$Date, format= "%d/%m/%Y")
 m$DateTime= as.POSIXct(paste(m$Date, m$Time, format= "%d/%m/%Y %H:%M:%S"))
 png("plot2.png", width =480, height = 480, units = "px")
-with(m, plot(DateTime, Global_active_power, type = "l", col = "black", xlab = "Day", ylab = "Global Active Power (Kiolowatt)"))
+with(m, plot(DateTime, Global_active_power, type = "l", col = "black", xlab = " ", ylab = "Global Active Power (Kiolowatt)"))
 dev.off()
