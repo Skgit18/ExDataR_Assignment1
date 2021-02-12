@@ -1,0 +1,7 @@
+library(dplyr)
+m <- read.csv(file = 'D:/household_power_consumption.csv', sep = ';', header = TRUE, check.names = TRUE)
+m$Date= as.Date(m$Date, format= "%d/%m/%Y")
+m$DateTime= as.POSIXct(paste(m$Date, m$Time, format= "%d/%m/%Y %H:%M:%S"))
+png(filename= "plot1.png", width =480, height = 480, units = "px")
+with(m, hist(Global_active_power, col = "red", main = "Global Active Power", xlab = "Global Active Power (Kiolowatt)"))
+dev.off()
